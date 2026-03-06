@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Professor from "./pages/Professor";
 import Home from "./pages/Home";
@@ -10,11 +10,11 @@ import IniciarSessao from "./pages/IniciarSessao";
 import ProfessorPainel from "./pages/ProfessorPainel";
 import ProfessorRespostas from "./pages/ProfessorRespostas";
 import RespostasAtividade from "./pages/RespostasAtividade";
-import CodigoSala from "./pages/codigoSala";
+import CodigoSala from "./pages/CodigoSala";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -27,9 +27,8 @@ export default function App() {
         <Route path="/professor/painel/:codigo" element={<ProfessorPainel />} />
         <Route path="/professor/respostas/:activityId" element={<ProfessorRespostas />} />
         <Route path="/professor/respostas/atividade/:activityId" element={<RespostasAtividade />} />
-        <Route path="/codigo-sala" element={<CodigoSala />} />
-
+        <Route path="/professor/codigo/:codigo" element={<CodigoSala />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
